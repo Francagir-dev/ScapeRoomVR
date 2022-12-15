@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Range(0,5)] public float timer;
-    private bool timerON;
+    public float timer = 300;
+    private bool timerON = true;
+    public TextMeshProUGUI countdownTxt;
+    bool goodCombinationColours;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -21,14 +19,29 @@ public class GameManager : MonoBehaviour
         {
             if (timer > 0.0f) 
             {
-                timer -= Time.deltaTime;
+                timer -= Time.deltaTime;       
             }
             else
             {
                 timer = 0f;
                 timerON= false;
             }
+            timerTXT(timer);
         }
     }
- 
+
+    /// <summary>
+    /// Calculate Minutes and Seconds from timer
+    /// </summary>
+    /// <param name="time">Time remaining</param>
+    /// <returns>Time remaining as String to show it on screen </returns>
+    public void timerTXT(float time) {
+
+        float minutes = time / 60; 
+        float seconds = time % 60;
+
+        countdownTxt.text = string.Format("{00:00}:{00:00}", minutes, seconds);
+
+
+    }
 }
