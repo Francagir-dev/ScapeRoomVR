@@ -11,6 +11,7 @@ public class DeathMenu : MonoBehaviour
         characterScapeRoom.transform.position = initialPosition;
         GameManager.instance.deathMenu.SetActive(false);
         GameManager.instance.timer = 300;
+        GameManager.instance.door.gameObject.transform.rotation = Quaternion.Euler(0f,0f,0f);
     }
     public void QuitGame() {
         Application.Quit();

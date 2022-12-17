@@ -14,6 +14,7 @@ public class Bomb : MonoBehaviour
             if (GameManager.instance.CheckColor(bombColor)) {
                 this.gameObject.SetActive(false);
                 GameManager.instance.bombsDeactivated.Add(this.gameObject);
+                if (this.bombColor.Equals("amarillo")) { }//WIN
             } 
             else if(!GameManager.instance.CheckColor(bombColor)) {
                 foreach (GameObject bomba in GameManager.instance.bombsDeactivated) {
