@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("Door puzzle")]
     public bool hasKey;
     public Rigidbody door;
-
+    public bool hasOpened;
     [Header("Bomb Puzzle")]
     List<string> colorOrder = new List<string>() { "verde", "azul", "amarillo" };
     List<string> colorOrderBackUp = new List<string>() { "verde", "azul", "amarillo" };

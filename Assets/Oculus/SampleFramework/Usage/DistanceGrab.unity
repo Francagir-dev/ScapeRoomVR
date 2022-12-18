@@ -5650,7 +5650,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3680607434384803147}
   - component: {fileID: 3680607434384803149}
-  - component: {fileID: 3680607434384803148}
   m_Layer: 0
   m_Name: GrabManager
   m_TagString: Untagged
@@ -5672,21 +5671,6 @@ Transform:
   m_Father: {fileID: 3680607433127796645}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3680607434384803148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3680607434384803146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d153878a9f7eb45b0e02c0c739029a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OutlineColorInRange: {r: 1, g: 1, b: 1, a: 1}
-  OutlineColorHighlighted: {r: 0.0141509175, g: 0.9049897, b: 1, a: 1}
-  OutlineColorOutOfRange: {r: 0, g: 0, b: 0, a: 0}
 --- !u!135 &3680607434384803149
 SphereCollider:
   m_ObjectHideFlags: 0
