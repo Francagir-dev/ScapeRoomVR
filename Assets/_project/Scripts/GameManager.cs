@@ -9,12 +9,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Timer")]
     public float timer = 300f; //5 min
-    [SerializeField] private bool timerON = true;
+     public bool timerON = true;
     [SerializeField] private TextMeshProUGUI countdownTxt;//Texto contador
 
     [Header("Door puzzle")]
     public bool hasKey;
     public Rigidbody door;
+    public BoxCollider doorCollider;
     public bool hasOpened;
 
     [Header("Bomb Puzzle")]
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
                 timer = 0f; //timer a 0, cuando vaya a ser menor
                 timerON = false;//paramos el contador
                 deathMenu.SetActive(true);
+                Time.timeScale = 0f;
             }
             timerTXT(timer);//asignamos el tiempo
         }

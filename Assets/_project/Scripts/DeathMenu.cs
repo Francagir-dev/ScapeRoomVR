@@ -10,7 +10,9 @@ public class DeathMenu : MonoBehaviour
     public void ResetGame() {
         characterScapeRoom.transform.position = initialPosition; //Asignamos posicion inicial
         GameManager.instance.deathMenu.SetActive(false); //Desactivamos el menu
-        GameManager.instance.timer = 300; //reseteamos tiempo
+        GameManager.instance.timer = 300;
+        GameManager.instance.timerON = true;//reseteamos tiempo
+        Time.timeScale = 1f;
         GameManager.instance.door.gameObject.transform.rotation = Quaternion.Euler(0f,0f,0f); //asignamos rotacion de puerta (por si la hubiesemos abierto)
     }
     public void QuitGame() {
