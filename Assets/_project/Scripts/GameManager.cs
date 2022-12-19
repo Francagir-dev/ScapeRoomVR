@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Timer")]
     public float timer = 300f; //5 min
-    private bool timerON = true;
-    public TextMeshProUGUI countdownTxt;//Texto contador
+    [SerializeField] private bool timerON = true;
+    [SerializeField] private TextMeshProUGUI countdownTxt;//Texto contador
 
     [Header("Door puzzle")]
     public bool hasKey;
     public Rigidbody door;
     public bool hasOpened;
+
     [Header("Bomb Puzzle")]
     List<string> colorOrder = new List<string>() { "verde", "azul", "amarillo" };
     List<string> colorOrderBackUp = new List<string>() { "verde", "azul", "amarillo" };
@@ -61,12 +62,11 @@ public class GameManager : MonoBehaviour
         //calculamos minutos y segundos
         float minutes = time / 60; 
         float seconds = time % 60;
-
-        string textCounter = string.Format("{0:00}:{0:00}", minutes, seconds); //formateamos el texto para que el contador se noten los minutos y segundos
+        
+        string textCounter = (int)minutes +" : " + (int)seconds; //formateamos el texto para que el contador se noten los minutos y segundos
+       
         countdownTxt.text = textCounter;
        
-        Debug.Log(textCounter);
-
     }
     /// <summary>
     /// Check color sequence
@@ -85,9 +85,5 @@ public class GameManager : MonoBehaviour
             bombsDeactivated.Clear();
             return false;
         }
-       
     }
-
-
-
 }

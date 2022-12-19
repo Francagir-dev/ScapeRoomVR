@@ -8,13 +8,13 @@ public class DeathMenu : MonoBehaviour
 
     [SerializeField]private GameObject characterScapeRoom;
     public void ResetGame() {
-        characterScapeRoom.transform.position = initialPosition;
-        GameManager.instance.deathMenu.SetActive(false);
-        GameManager.instance.timer = 300;
-        GameManager.instance.door.gameObject.transform.rotation = Quaternion.Euler(0f,0f,0f);
+        characterScapeRoom.transform.position = initialPosition; //Asignamos posicion inicial
+        GameManager.instance.deathMenu.SetActive(false); //Desactivamos el menu
+        GameManager.instance.timer = 300; //reseteamos tiempo
+        GameManager.instance.door.gameObject.transform.rotation = Quaternion.Euler(0f,0f,0f); //asignamos rotacion de puerta (por si la hubiesemos abierto)
     }
     public void QuitGame() {
-        Application.Quit();
+        Application.Quit(1);//salimos del juego
     }
 }
 
