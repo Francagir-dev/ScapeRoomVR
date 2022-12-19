@@ -12,9 +12,9 @@ public class Bomb : MonoBehaviour
         if (collision.rigidbody.gameObject.CompareTag("Player")) {
 
             if (GameManager.instance.CheckColor(bombColor)) {
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 GameManager.instance.bombsDeactivated.Add(this.gameObject);
-                if (this.bombColor.Equals("amarillo")) { }//WIN
+                if (bombColor.Equals("amarillo")) { }//WIN
             } 
             else if(!GameManager.instance.CheckColor(bombColor)) {
                 foreach (GameObject bomba in GameManager.instance.bombsDeactivated) {
@@ -23,6 +23,7 @@ public class Bomb : MonoBehaviour
             }       
         }
     }
+       
 
 }
 
