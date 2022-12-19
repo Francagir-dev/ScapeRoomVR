@@ -24,6 +24,7 @@ public class KeyColl : MonoBehaviour
                 Ghostkey.SetActive(false);
                 GameManager.instance.door.isKinematic = true; //cambiamos a collider para las bombas
                 other.gameObject.SetActive(false);
+                GameManager.instance.doorCollider.isTrigger= true;
                 GameManager.instance.hasOpened = true;
                 LeftHand.GetComponent<SphereCollider>().isTrigger = false; 
                 RightHand.GetComponent<SphereCollider>().isTrigger = false; //cambiamos a collider para las bombas
